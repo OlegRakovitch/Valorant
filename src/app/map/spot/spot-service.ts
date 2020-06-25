@@ -1,35 +1,39 @@
 import { Injectable } from '@angular/core';
 import { Spot } from './spot';
-import { Map } from './map';
-import { MapService } from './map-service';
+import { ValorantMap } from '../map';
+import { MapService } from '../map-service';
 
 type HardcodedSpotsCollection = { [map: string]: Spot[] };
 
 @Injectable()
 export class SpotService {
-
   private readonly hardcodedSpots: Promise<HardcodedSpotsCollection>;
 
-  constructor(
-    private maps: MapService
-  ) {
+  constructor(private maps: MapService) {
     this.hardcodedSpots = this.loadHardcodedSpots();
   }
 
+  public async loadSpots(map: ValorantMap): Promise<Spot[]> {
+    const spots = await this.hardcodedSpots;
+
+    return spots[map.name];
+  }
+
   private async loadHardcodedSpots() {
-
     const spots: HardcodedSpotsCollection = {};
-    for(const map of await this.maps.getMaps()) {
 
+    for (const map of await this.maps.getMaps()) {
       spots[map.name] = this.getHardcodedSpots(map);
     }
+
     return spots;
   }
 
-  private getHardcodedSpots(map: Map) {
+  private getHardcodedSpots(map: ValorantMap) {
     const factory = new SpotFactory(map);
 
     let data: string[][];
+
     if (map.name === 'ascent') {
       data = [
         ['Арка', 'arch'],
@@ -73,18 +77,13 @@ export class SpotService {
         ['Провод', 'wire']
       ];
     }
-    return data.map(([caption, name]) =>
-      factory.create(caption, name));
-  }
 
-  async loadSpots(map: Map): Promise<Spot[]> {
-    const spots = await this.hardcodedSpots;
-    return spots[map.name];
+    return data.map(([caption, name]) => factory.create(caption, name));
   }
 }
 
 class SpotFactory {
-  constructor(private map: Map) { }
+  constructor(private map: ValorantMap) { }
 
   create(caption: string, file: string) {
     return new Spot(caption, `${this.map.name}/${file}.jpeg`);

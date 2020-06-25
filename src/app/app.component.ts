@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import { MapSelectorService } from './map/map-selector-service';
-import { MapService } from './map/map-service';
-import { Map } from './map/map';
+
+import { MapSelectorService, MapService, ValorantMap } from './map';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'valorant';
 
-  maps: Map[];
+  maps: ValorantMap[];
 
   constructor(
     private map: MapSelectorService,

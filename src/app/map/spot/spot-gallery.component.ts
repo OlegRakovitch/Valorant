@@ -1,16 +1,17 @@
-import { Map } from './map';
+import { ValorantMap } from '../map';
 import { Component } from '@angular/core';
 import { SpotService } from './spot-service';
 import { Spot } from './spot';
-import { MapSelectorService } from './map-selector-service';
+import { MapSelectorService } from '../map-selector-service';
 
 @Component({
-  selector: 'spot-gallery',
+  selector: 'app-spot-gallery',
   templateUrl: './spot-gallery.component.html',
   styleUrls: ['./spot-gallery.component.css']
 })
-export class SpotGallery {
-  spots: Spot[];
+
+export class SpotGalleryComponent {
+  public spots: Spot[];
 
   constructor(
     private service: SpotService,
@@ -19,11 +20,11 @@ export class SpotGallery {
     this.subscribe(maps);
   }
 
-  subscribe(maps: MapSelectorService) {
+  public subscribe(maps: MapSelectorService) {
     maps.map.subscribe(this.loadSpots.bind(this));
   }
 
-  private async loadSpots(map: Map) {
+  private async loadSpots(map: ValorantMap) {
     this.spots = await this.service.loadSpots(map);
   }
 }

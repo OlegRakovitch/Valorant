@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
+
 import { Observable, ReplaySubject } from 'rxjs';
-import { Map } from './map';
+
 import { MapService } from './map-service';
+import { ValorantMap } from './map';
 
 @Injectable()
 export class MapSelectorService {
-
-  readonly map: Observable<Map>;
-  readonly mapPublisher = new ReplaySubject<Map>();
+  readonly map: Observable<ValorantMap>;
+  readonly mapPublisher = new ReplaySubject<ValorantMap>();
 
   constructor(private service: MapService) {
     this.map = this.mapPublisher.asObservable();
