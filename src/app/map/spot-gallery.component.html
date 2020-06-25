@@ -1,0 +1,23 @@
+<div class="container-fluid px-0 imgbox">
+  <div id="spotsCarousel" class="carousel slide center-fit" data-interval="false" data-ride="carousel">
+    <div class="carousel-inner">
+
+      <div *ngFor="let spot of spots; let spotId = index;" class="carousel-item {{ spotId ? '' : 'active' }}" >
+        <img class="center-fit" src="../assets/{{ spot.path }}">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>{{ spot.caption }}</h1>
+        </div>
+      </div>
+
+      <a class="carousel-control-prev" href="#spotsCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+
+      <a class="carousel-control-next" href="#spotsCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</div>
