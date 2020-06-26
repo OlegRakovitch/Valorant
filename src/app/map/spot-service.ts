@@ -72,6 +72,29 @@ export class SpotService {
         ['Окно', 'window2'],
         ['Провод', 'wire']
       ];
+    } else if (map.name === 'bind') {
+      data = [
+        ['Баня', 'bathhouse'],
+        ['Машина', 'car'],
+        ['Ковры', 'carpets'],
+        ['Стройка', 'construction'],
+        ['Фонтан', 'fountain'],
+        ['Мусор', 'garbage'],
+        ['Сад', 'garden'],
+        ['Лампа', 'lamp'],
+        ['Лонг', 'long'],
+        ['Мид', 'mid'],
+        ['Музей', 'museum'],
+        ['Дворец', 'palace'],
+        ['Проезд', 'passage'],
+        ['Труба', 'pipe'],
+        ['Трубы', 'pipes'],
+        ['Доска', 'plank'],
+        ['Шорт', 'short'],
+        ['Полотенце', 'towel'],
+        ['Окно', 'window'],
+        ['Зига', 'zigzag']
+      ];
     }
     return data.map(([caption, name]) =>
       factory.create(caption, name));

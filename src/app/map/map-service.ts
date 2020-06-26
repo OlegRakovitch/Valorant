@@ -26,7 +26,8 @@ export class MapService {
     const maps: MapCollection = {};
     const mapData = [
       ['ascent', 'Ascent'],
-      ['split', 'Split']
+      ['split', 'Split'],
+      ['bind', 'Bind']
     ];
     for(const [name, caption] of mapData) {
       maps[name] = this.createMap(name, caption);
