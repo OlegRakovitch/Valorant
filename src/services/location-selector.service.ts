@@ -14,6 +14,6 @@ export class LocationSelectorService {
   }
 
   async selectLocation(name: string): Promise<void> {
-    this.locationPublisher.next(this.service.getMap(name));
+    this.locationPublisher.next(this.service.getLocation(name));
   }
 }

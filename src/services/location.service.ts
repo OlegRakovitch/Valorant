@@ -14,7 +14,7 @@ export class LocationService {
     this.locations = this.loadLocations();
   }
 
-  getMap(name: string): Location {
+  getLocation(name: string): Location {
     return this.locations[name];
   }
 
