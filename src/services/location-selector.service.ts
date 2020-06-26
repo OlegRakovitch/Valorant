@@ -7,7 +7,8 @@ import { LocationService } from './location.service';
 @Injectable()
 export class LocationSelectorService {
   readonly location: Observable<Location>;
-  readonly locationPublisher = new ReplaySubject<Location>();
+
+  private readonly locationPublisher = new ReplaySubject<Location>();
 
   constructor(private service: LocationService) {
     this.location = this.locationPublisher.asObservable();
