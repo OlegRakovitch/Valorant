@@ -119,6 +119,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "valorant"
+    }
+  },
+  "defaultProject": "valorant",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

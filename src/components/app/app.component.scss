@@ -1,0 +1,53 @@
+@mixin flexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    @include flexcenter();
+    flex-basis: 18vh;
+
+    .image {
+      height: 12vh;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+
+    .map {
+      @include flexcenter();
+      padding: 2vh 1.125vw;
+      flex-basis: 33vw;
+      color: white;
+
+      .image {
+        flex: 1;
+      }
+    }
+
+    .point {
+      @include flexcenter();
+      color: white;
+      flex: 1 0;
+      padding: 2vh 1.125vw;
+
+      .image {
+        max-width: 100%;
+        flex: 1 1;
+      }
+    }
+  }
+}
