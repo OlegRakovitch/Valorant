@@ -3,7 +3,7 @@
     <div class="carousel-inner">
 
       <div *ngFor="let spot of spots; let spotId = index;" class="carousel-item {{ spotId ? '' : 'active' }}" >
-        <img class="center-fit" src="../assets/{{ spot.path }}">
+        <img class="center-fit" src="assets/{{ spot.path }}">
         <div class="carousel-caption d-none d-md-block">
           <h1>{{ spot.caption }}</h1>
         </div>

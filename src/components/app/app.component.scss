@@ -12,15 +12,7 @@
 
   .header {
     @include flexcenter();
-    flex-basis: 18vh;
-
-    .image {
-      height: 12vh;
-
-      &:not(:last-child) {
-        margin-right: 20px;
-      }
-    }
+    flex-basis: 10vh;
   }
 
   .content {
@@ -34,6 +26,7 @@
       color: white;
 
       .image {
+        max-width: 100%;
         flex: 1;
       }
     }

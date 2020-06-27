@@ -1,0 +1,9 @@
+img {
+  height: 8vh;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  cursor: pointer;
+}
