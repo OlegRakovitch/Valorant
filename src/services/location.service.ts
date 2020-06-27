@@ -112,6 +112,32 @@ export class LocationService {
           window2: 'Окно',
           wire: 'Провод'
         }
+      },
+      haven: {
+        caption: 'Haven',
+        spots: {
+          banana: 'Банан',
+          book: 'Книга',
+          box: 'Коробка',
+          cabbage: 'Капуста',
+          closet: 'Каморка',
+          green: 'Зелень',
+          hare: 'Заяц',
+          hay: 'Сено',
+          long: 'Лонг',
+          map: 'Карта',
+          mid: 'Мид',
+          pot: 'Горшки',
+          radio: 'Радио',
+          scene: 'Сцена',
+          screen: 'Экран',
+          shield: 'Щит',
+          short: 'Шорт',
+          storage: 'Склад',
+          tatoo: 'Тату',
+          under_window: 'Под окном',
+          window: 'Окно'
+        }
       }
     };
   }
