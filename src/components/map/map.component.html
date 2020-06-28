@@ -1,0 +1,7 @@
+<div *ngIf="map" class='map'>
+  <img vSpy class='image' usemap="#map" src='assets/{{ map.path }}'>
+
+  <map id="map" name="map">
+    <area *ngFor="let spot of spots;" (click)="selectSpot(spot.name)" alt="{{ spot.caption }}" title="{{ spot.caption }}" coords="{{ spot.coords }}" shape="poly">
+  </map>
+</div>

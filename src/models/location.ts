@@ -6,4 +6,8 @@ export class Location {
     readonly caption: string,
     readonly spots: Spot[]
   ) { }
+
+  findSpotByName(name: string): Spot {
+    return this.spots.find(spot => spot.name === name);
+  }
 }

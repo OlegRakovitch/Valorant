@@ -3,26 +3,36 @@ import { NgModule } from '@angular/core';
 
 import {
   AppComponent,
-  SpotGalleryComponent,
-  LocationsComponent
+  LocationsComponent,
+  MapComponent,
+  SpotComponent
 } from './components';
 import {
   LocationService,
-  LocationSelectorService
+  LocationSelectorService,
+  SpotsService,
+  SpotSelectorService
 } from './services';
+import {
+  SpyDirective
+} from './directives';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SpotGalleryComponent,
-    LocationsComponent
+    LocationsComponent,
+    MapComponent,
+    SpotComponent,
+    SpyDirective
   ],
   imports: [
     BrowserModule
   ],
   providers: [
     LocationService,
-    LocationSelectorService
+    LocationSelectorService,
+    SpotsService,
+    SpotSelectorService
   ],
   bootstrap: [AppComponent]
 })

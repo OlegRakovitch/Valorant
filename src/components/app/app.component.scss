@@ -23,24 +23,12 @@
       @include flexcenter();
       padding: 2vh 1.125vw;
       flex-basis: 33vw;
-      color: white;
-
-      .image {
-        max-width: 100%;
-        flex: 1;
-      }
     }
 
-    .point {
+    .spot {
       @include flexcenter();
-      color: white;
       flex: 1 0;
       padding: 2vh 1.125vw;
-
-      .image {
-        max-width: 100%;
-        flex: 1 1;
-      }
     }
   }
 }

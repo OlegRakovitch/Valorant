@@ -5,7 +5,7 @@ import { LocationService, LocationSelectorService } from '../../services';
 import { LocationView } from '../../views';
 
 @Component({
-  selector: 'locations',
+  selector: 'v-locations',
   templateUrl: './locations.component.html',
   styleUrls: ['./locations.component.scss']
 })
