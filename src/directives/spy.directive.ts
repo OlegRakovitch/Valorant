@@ -1,4 +1,4 @@
-import { Directive, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Directive, HostListener } from '@angular/core';
 
 import { SpotsService, LocationSelectorService } from '../services';
 import { waitUntil } from '../utils';
@@ -7,6 +7,7 @@ declare var $: any;
 interface Image {
   width: number;
   naturalWidth: number;
+  complete: boolean;
 }
 
 @Directive({selector: '[vSpy]'})
@@ -37,7 +38,7 @@ export class SpyDirective {
 
   private imageRendered(): boolean {
     const image = this.getImage();
-    return !!image && !!image.width && !!image.naturalWidth;
+    return !!image && !!image.complete && !!image.width && !!image.naturalWidth;
   }
 
   private calculateRatio(): number {
